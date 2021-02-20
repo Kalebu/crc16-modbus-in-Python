@@ -10,9 +10,9 @@ A cyclic redundancy check (CRC) is an error-detecting code commonly used in digi
 Usage 
 
 ```python
->> from crc import crc16_modbus
+>> from crc import crc16
 >> example_str = 'Cyclic redundat check 16 modbus alogirthm in python'
->> crc16_modbus(example_str)
+>> crc16(example_str)
 '396E'
 ```
 s

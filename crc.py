@@ -1,16 +1,15 @@
 
-def crc16_modbus(data: str, poly: hex = 0xA001) -> str:
+def crc16(data: str, poly: hex = 0xA001) -> str:
     '''
         CRC-16 MODBUS HASHING ALGORITHM
     '''
     crc = 0xFFFF
     for byte in data:
         crc ^= ord(byte)
-        for j in reversed(range(1, 9)):
-            if crc & 0x0001:
-                crc = (crc >> 1) ^ poly
-            else:
-                crc = crc >> 1
+        for _ in range(8):
+            crc = ((crc >> 1) ^ poly
+                   if (crc & 0x0001)
+                   else crc >> 1)
 
     hv = hex(crc).upper()[2:]
     blueprint = '0000'
