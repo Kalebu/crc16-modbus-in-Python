@@ -15,5 +15,5 @@ Usage
 >> crc16_modbus(example_str)
 '396E'
 ```
-s
+
 All the credits to [kalebu](https://github.com/kalebu)
